@@ -1,0 +1,1 @@
+Odkaz na Google Spreadsheet: [https://docs.google.com/spreadsheets/d/1o-2nLTeTx2HCYgjptWw7PRqFUstaTcJBGdQ5NEzHBbw/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1o-2nLTeTx2HCYgjptWw7PRqFUstaTcJBGdQ5NEzHBbw/edit?usp=sharing)
