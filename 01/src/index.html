@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+    <form id="myForm">
+      <div class="form-group">
+        <label for="ingredients">Ingredients</label>
+        <input type="text" class="form-control" name="ingredients" aria-describedby="ingrediants">
+        <small id="emailHelp" class="form-text text-muted">Use comma to separate each ingredient</small>
+      </div>
+      <div class="form-group">
+        <label for="food">Food</label>
+        <input type="text" class="form-control" name="food" aria-describedby="food">
+      </div>
+      <button onclick="onSubmit();" style="width: 40%;border: none; height: 90px; background: url(https://cdn.shopify.com/s/files/1/0463/0789/products/1_e2affe59-59e2-443e-9b29-6f8351c48afc_1200x1200.png?v=1571564518) center center; background-size: cover; display: block; margin: auto;">aa</button>
+    </form>
+    <script>
+      function onSubmit(){
+        var form = document.getElementById("myForm").elements;
+        var obj ={};
+        for(var i = 0 ; i < form.length ; i++){
+            var item = form.item(i);
+            obj[item.name] = item.value;
+        }
+        google.script.run.onFormSubmit(obj);
+        google.script.host.close();
+      }
+    </script>
+  </body>
+</html>
