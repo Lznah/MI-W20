@@ -1,0 +1,29 @@
+<script>
+    function _callback(arr) {
+        if(arr[0] == undefined) return;
+        
+        var html = "<table>";
+        html += "<tr>";
+        var keys = Object.keys(arr[0]);
+        for(var i=0; i < keys.length; i++) {
+            html += "<th>"+keys[i]+"</th>";
+        }
+        html += "</tr>";
+        for(var a=0; a < arr.length; a++) {
+            html += "<tr>";
+            for(var i=0; i < keys.length; i++) {
+                var index = keys[i]; 
+                var elem = arr[a][index];
+                html += "<td nowrap>"+elem+"</td>";
+            }
+            html += "</tr>";
+        }
+        html += "</table>";
+        document.querySelector("body").innerHTML = html;
+    }
+</script>
+
+<body></body>
+
+<script src="http://localhost:8888/get/"></script>
+

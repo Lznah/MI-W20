@@ -1,0 +1,15 @@
+# Tutorial 5
+- Implement a simple chat server using polling, long-polling and WebSockets. The server exposes the API for sending a new message to all connected clients and for receiving latest messages. Use Node.js for the server side and HTML/JavaScript for the client side.
+- Polling
+    - Implement server allowing connection of clients and distribution of messages
+        - Use only Node.js - HTTP
+    - Implement client for displaying messages
+- Long-polling
+    - Implement server allowing connection of clients and distribution of messages
+        -Use only Node.js - HTTP
+    - Implement client for displaying messages
+- WebSocket
+    - Implement server allowing connection of clients and distribution of messages
+    - You can use any WebSocket implementation e.g. https://github.com/websockets/ws
+    - Implement client for displaying messages
+- Demonstrate the difference in the code and behavior.
