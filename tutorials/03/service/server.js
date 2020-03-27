@@ -5,13 +5,16 @@ const hostname = '127.0.0.1';
 const port = 8888;
 
 http.createServer( (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-	res.setHeader('Access-Control-Request-Method', '*');
-	res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', '*');
     
     const reqUrl = url.parse(req.url, true);
     console.log(`${req.method}> ${reqUrl.pathname}`);
+    if(reqUrl.pathname == '/post/' || reqUrl.pathname == '/put/' || reqUrl.pathname == '/delete/' || reqUrl.pathname == '/get/') {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Request-Method', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, DELETE, PUT');
+      res.setHeader('Access-Control-Allow-Headers', '*');
+    }
+
     if(reqUrl.pathname == '/get/') {
         var myObj = [
             {
@@ -118,7 +121,7 @@ http.createServer( (req, res) => {
             }
           ];
         res.statusCode = 200;
-        res.setHeader('Content-Type', 'text/plaintext');
+        res.setHeader('Content-Type', 'application/json');
         res.end("_callback(" + JSON.stringify(myObj) + ");");
     } else if(reqUrl.pathname == '/post/' || reqUrl.pathname == '/put/' || reqUrl.pathname == '/delete/') {
         res.statusCode = 200;
